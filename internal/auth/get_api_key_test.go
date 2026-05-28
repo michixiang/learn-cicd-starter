@@ -49,7 +49,7 @@ func TestGetAPIKey(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		t.Run(t.name, func(t *testing.T) {
+		t.Run(tt.name, func(t *testing.T) {
 			got, err := GetAPIKey(tt.headers)
 
 			if tt.expectErr {
