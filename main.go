@@ -95,10 +95,10 @@ func main() {
 		Handler:           router,
 		ReadHeaderTimeout: 10 * time.Second,
 	}
-	if _, err := strconv.Atoi(port); err != nil {
-		log.Fatalf("invalid port %q: must be numeric", port)
+	p, err := strconv.Atoi(port)
+	if err != nil {
+		log.Fatalf("invalid port: must be numeric") // don't echo `port`
 	}
-
 	log.Printf("Serving on port: %s\n", port)
 	log.Fatal(srv.ListenAndServe())
 }
