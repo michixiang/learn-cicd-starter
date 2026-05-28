@@ -99,7 +99,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("invalid port: must be numeric") // don't echo `port`
 	}
-	log.Printf("Serving on port: %s\n", p)
+	log.Printf("Serving on port: %d\n", p)
 	log.Fatal(srv.ListenAndServe())
 }
 
